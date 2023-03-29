@@ -20,8 +20,8 @@ X "cool cool developer"		    —> !["developer","cool"]
 
 X "DeveLoper"				        —> ["developer"]
 X "developers"                    -> ["developer"]
-"coder"                         -> ["developer"]
-"coder programmer developer"    -> ["developer"]
+X "coder"                         -> ["developer"]
+X "coder programmer developer"    -> ["developer"]
 "coder programmers developers"  -> ["developer"]
 
 "FinD all coders developer"     —> ["find", "all", "developer"]
@@ -82,3 +82,10 @@ def test_synonym():
     data = "coder"
     expected = ["developer"]
     assert parse(data) == expected
+
+
+def test_multiple_synonyms():
+    data = "coder programmer developer"
+    expected = ["developer"]
+    assert parse(data) == expected
+
