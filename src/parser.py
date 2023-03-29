@@ -9,6 +9,11 @@ def parse(query):
 
 def parse_word(word):
     word = word.lower()
+    new_word = ""
+    for i, char in enumerate(word):
+        if char.isalpha():
+            new_word += word[i]
+    word = new_word
     if word.endswith('s'):
         word = word[:-1]
     if word in ["coder", "programmer"]:
