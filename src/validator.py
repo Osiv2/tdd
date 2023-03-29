@@ -22,4 +22,4 @@ def is_valid_password(contains_lower_case, contains_upper_case, contains_digit, 
 
 
 def is_special_character(char):
-    return char is "-" or char is "_" or char is "," or char is "/"
+    return char in ["-", "_", ",", "/"]
