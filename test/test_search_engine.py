@@ -12,7 +12,7 @@ synonyms
 X "developer"				        —> ["developer"]
 X None                              -> []
 X ""                                  -> []
-"cool developer"		        —> ["cool", "developer"]
+X "cool developer"		        —> ["cool", "developer"]
 "cool cool developer"		    —> ["cool", "developer"]
 "DeveLoper"				        —> ["developer"]
 "developers"                    -> ["developer"]
@@ -46,5 +46,11 @@ def test_empty():
 
 def test_parse_multiple_words():
     data = "cool developer"
+    expected = ["cool", "developer"]
+    assert parse(data) == expected
+
+
+def test_parse_unique_words():
+    data = "cool cool developer"
     expected = ["cool", "developer"]
     assert parse(data) == expected
