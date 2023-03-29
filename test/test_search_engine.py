@@ -13,7 +13,11 @@ X "developer"				        —> ["developer"]
 X None                              -> []
 X ""                                  -> []
 X "cool developer"		        —> ["cool", "developer"]
-"cool cool developer"		    —> ["cool", "developer"]
+X "cool cool developer"		    —> ["cool", "developer"]
+
+"cool cool developer"		    —> !["developer","cool"]
+
+
 "DeveLoper"				        —> ["developer"]
 "developers"                    -> ["developer"]
 "coder"                         -> ["developer"]
@@ -54,3 +58,9 @@ def test_parse_unique_words():
     data = "cool cool developer"
     expected = ["cool", "developer"]
     assert parse(data) == expected
+
+
+def test_parse_unique_words_in_right_order():
+    data = "cool cool developer"
+    expected = ["developer", "cool"]
+    assert parse(data) != expected
