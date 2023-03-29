@@ -22,7 +22,7 @@ X "DeveLoper"				        —> ["developer"]
 X "developers"                    -> ["developer"]
 X "coder"                         -> ["developer"]
 X "coder programmer developer"    -> ["developer"]
-"coder programmers developers"  -> ["developer"]
+X "coder programmers developers"  -> ["developer"]
 
 "FinD all coders developer"     —> ["find", "all", "developer"]
 
@@ -89,3 +89,14 @@ def test_multiple_synonyms():
     expected = ["developer"]
     assert parse(data) == expected
 
+
+def test_multiple_synonyms_with_plural():
+    data = "coder programmers developers"
+    expected = ["developer"]
+    assert parse(data) == expected
+
+
+def test_arbitrary_query():
+    data = "FinD all coders developer"
+    expected = ["find", "all", "developer"]
+    assert parse(data) == expected
