@@ -11,4 +11,6 @@ def parse_word(word):
     word = word.lower()
     if word.endswith('s'):
         word = word[:-1]
+    if word == "coder":
+        word = "developer"
     return word
