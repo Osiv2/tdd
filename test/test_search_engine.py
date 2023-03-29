@@ -43,10 +43,11 @@ X "developer         berlin          " ---> ["developer","berlin"]
 X "developer123#" --> ["developer"]
 X "developer #¤¤%&123" --> ["developer"]
 
-"developer in berlin" --> ["developer", "berlin"]
-"developer at berlin" --> ["developer", "berlin"]
-"developer on berlin" --> ["developer", "berlin"]
+X "developer in berlin" --> ["developer", "berlin"]
+X "developer at berlin" --> ["developer", "berlin"]
+X "developer on berlin" --> ["developer", "berlin"]
 
+"coder donut" --> ["developer", "berliner"]
 
 
 '''
@@ -157,4 +158,10 @@ def test_no_word_like_at():
 def test_no_word_like_on():
     data = "developer on berlin"
     expected = ["developer", "berlin"]
+    assert parse(data) == expected
+
+
+def test_multiple_synonyms():
+    data = "coder donut"
+    expected = ["developer", "berliner"]
     assert parse(data) == expected
