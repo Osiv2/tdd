@@ -14,8 +14,10 @@ X ABC-12 -> False
 
 X abc-12 -> False
 
-Abc--- -> False
-Abc-09 -> True
+X Abc--- -> False
+X Abc-09 -> True
+
+Abc+12 -> False
 
 Abc_12 -> true
 Abc,12 -> true
@@ -42,3 +44,11 @@ def test_no_uppercase_character():
 
 def test_no_numbers():
     assert validate('Abc---') == False
+
+
+def test_other_numbers():
+    assert validate('Abc-09') == True
+
+
+def test_must_contain_dash():
+    assert validate('Abc+12') == False
