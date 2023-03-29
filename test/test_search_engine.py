@@ -18,8 +18,8 @@ X "cool cool developer"		    —> ["cool", "developer"]
 X "cool cool developer"		    —> !["developer","cool"]
 
 
-X"DeveLoper"				        —> ["developer"]
-"developers"                    -> ["developer"]
+X "DeveLoper"				        —> ["developer"]
+X "developers"                    -> ["developer"]
 "coder"                         -> ["developer"]
 "coder programmer developer"    -> ["developer"]
 "coder programmers developers"  -> ["developer"]
@@ -72,7 +72,13 @@ def test_case_sensitivity():
     assert parse(data) == expected
 
 
-def test_synonym():
+def test_plural():
     data = "developers"
+    expected = ["developer"]
+    assert parse(data) == expected
+
+
+def test_synonym():
+    data = "coder"
     expected = ["developer"]
     assert parse(data) == expected
