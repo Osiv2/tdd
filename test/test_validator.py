@@ -1,5 +1,5 @@
 import pytest
-
+from ..src.validator import validate
 '''
 At least 1 lowercase character
 At least 1 uppercase character
