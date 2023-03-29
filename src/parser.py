@@ -16,8 +16,9 @@ def parse_word(word):
         word = ""
     if word.endswith('s'):
         word = word[:-1]
-    if word in ["coder", "programmer"]:
-        word = "developer"
+    for synonym in synonyms:
+        if word in synonym:
+            word = synonym[0]
     return word
 
 
@@ -31,3 +32,6 @@ def clean_word(word):
         if char.isalpha():
             new_word += char
     return new_word
+
+
+synonyms = [("developer", "coder", "programmer"), ("berliner", "donut")]
