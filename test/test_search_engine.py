@@ -26,7 +26,7 @@ Null -> []
 '''
 
 
-def test_parse():
+def test_parse_single_word():
     data = "developer"
     expected = ["developer"]
     assert parse(data) == expected
