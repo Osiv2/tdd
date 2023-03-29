@@ -19,9 +19,9 @@ X Abc-09 -> True
 
 X Abc+12 -> False
 
-Abc_12 -> true
-Abc,12 -> true
-Abc/12 -> true
+X Abc_12 -> true
+X Abc,12 -> true
+X Abc/12 -> true
 
 Abc-1 -> False
 
@@ -64,3 +64,7 @@ def test_must_allow_comma():
 
 def test_must_allow_slash():
     assert validate('Abc/12') == True
+
+
+def test_must_contain_at_least_6_characters():
+    assert validate('Abc-1') == False
