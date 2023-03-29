@@ -4,7 +4,7 @@ def validate(password):
     contains_digit = False
     contains_dash = False
 
-    if len(password) < 6:
+    if len(password) < 6 or len(password) > 12:
         return False
 
     for c in password:
