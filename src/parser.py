@@ -1,10 +1,10 @@
 def parse(query):
-    if query is None or query == "":
+    if query is None:
         return []
 
     search_engine_query = [parse_word(word) for word in query.split()]
 
-    return list(dict.fromkeys(search_engine_query))
+    return get_unique_list(search_engine_query)
 
 
 def parse_word(word):
@@ -14,3 +14,7 @@ def parse_word(word):
     if word in ["coder", "programmer"]:
         word = "developer"
     return word
+
+
+def get_unique_list(li):
+    return list(dict.fromkeys(li))
