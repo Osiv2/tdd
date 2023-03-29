@@ -9,6 +9,6 @@ def parse(query):
 
 def parse_word(word):
     word = word.lower()
-    if word[len(word)-1] is 's':
+    if word.endswith('s'):
         word = word[:-1]
     return word
