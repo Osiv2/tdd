@@ -158,10 +158,3 @@ def test_no_word_like_on():
     data = "developer on berlin"
     expected = ["developer", "berlin"]
     assert parse(data) == expected
-
-
-'''
-"developer in berlin" --> ["developer", "berlin"]
-"developer at berlin" --> ["developer", "berlin"]
-"developer on berlin" --> ["developer", "berlin"]
-'''
