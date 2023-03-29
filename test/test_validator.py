@@ -32,5 +32,5 @@ def test_ok_password():
     assert validate('Abc-12') == True
 
 
-def test_uppercase_character():
-    assert validate('A') == True
+def test_no_lowercase_character():
+    assert validate('ABC-12') == False
