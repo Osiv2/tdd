@@ -10,8 +10,8 @@ plural
 synonyms
 
 X "developer"				        —> ["developer"]
-X None -> []
-"" -> []
+X None                              -> []
+X ""                                  -> []
 "cool developer"		        —> ["cool", "developer"]
 "cool cool developer"		    —> ["cool", "developer"]
 "DeveLoper"				        —> ["developer"]
@@ -41,4 +41,10 @@ def test_null():
 def test_empty():
     data = ""
     expected = []
+    assert parse(data) == expected
+
+
+def test_parse_multiple_words():
+    data = "cool developer"
+    expected = ["cool", "developer"]
     assert parse(data) == expected
