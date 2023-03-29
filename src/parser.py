@@ -9,11 +9,7 @@ def parse(query):
 
 def parse_word(word):
     word = word.lower()
-    new_word = ""
-    for i, char in enumerate(word):
-        if char.isalpha():
-            new_word += word[i]
-    word = new_word
+    word = clean_word(word)
     if word.endswith('s'):
         word = word[:-1]
     if word in ["coder", "programmer"]:
@@ -23,3 +19,11 @@ def parse_word(word):
 
 def get_unique_list(li):
     return list(dict.fromkeys(li))
+
+
+def clean_word(word):
+    new_word = ""
+    for char in word:
+        if char.isalpha():
+            new_word += char
+    return new_word
