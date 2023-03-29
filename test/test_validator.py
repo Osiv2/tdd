@@ -17,7 +17,7 @@ X abc-12 -> False
 X Abc--- -> False
 X Abc-09 -> True
 
-Abc+12 -> False
+X Abc+12 -> False
 
 Abc_12 -> true
 Abc,12 -> true
@@ -50,5 +50,17 @@ def test_other_numbers():
     assert validate('Abc-09') == True
 
 
-def test_must_contain_dash():
+def test_must_allow_dash():
     assert validate('Abc+12') == False
+
+
+def test_must_allow_underscore():
+    assert validate('Abc_12') == True
+
+
+def test_must_allow_comma():
+    assert validate('Abc,12') == True
+
+
+def test_must_allow_slash():
+    assert validate('Abc/12') == True
