@@ -23,7 +23,7 @@ X Abc_12 -> true
 X Abc,12 -> true
 X Abc/12 -> true
 
-Abc-1 -> False
+X Abc-1 -> False
 
 Abc-12abc-12- -> False
 
@@ -68,3 +68,7 @@ def test_must_allow_slash():
 
 def test_must_contain_at_least_6_characters():
     assert validate('Abc-1') == False
+
+
+def test_must_contain_max_12_characters():
+    assert validate('Abc-12abc-12-') == False
