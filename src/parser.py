@@ -1,4 +1,4 @@
 def parse(query):
     if query is None or query == "":
         return []
-    return list(dict.fromkeys(query.split()))
+    return [word.lower() for word in list(dict.fromkeys(query.split()))]
