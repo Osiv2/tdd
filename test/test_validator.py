@@ -27,6 +27,11 @@ X Abc-1 -> False
 
 X Abc-12abc-12- -> False
 
+Additional requirement: A password cannot contain the same phrase twice
+Definition of a phrase? => min 3 chars builds a phrase 
+
+Abc-12aaa -> False
+
 '''
 
 
