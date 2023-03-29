@@ -12,7 +12,7 @@ X Abc-12 -> True
 
 X ABC-12 -> False
 
-abc-12 -> False
+X abc-12 -> False
 
 Abc--- -> False
 Abc-09 -> True
@@ -38,3 +38,7 @@ def test_no_lowercase_character():
 
 def test_no_uppercase_character():
     assert validate('abc-12') == False
+
+
+def test_no_numbers():
+    assert validate('Abc---') == False
