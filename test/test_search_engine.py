@@ -10,7 +10,7 @@ plural
 synonyms
 
 X "developer"				        —> ["developer"]
-None -> []
+X None -> []
 "" -> []
 "cool developer"		        —> ["cool", "developer"]
 "cool cool developer"		    —> ["cool", "developer"]
@@ -34,5 +34,11 @@ def test_parse_single_word():
 
 def test_null():
     data = None
+    expected = []
+    assert parse(data) == expected
+
+
+def test_empty():
+    data = ""
     expected = []
     assert parse(data) == expected
