@@ -18,7 +18,7 @@ X "cool cool developer"		    —> ["cool", "developer"]
 X "cool cool developer"		    —> !["developer","cool"]
 
 
-"DeveLoper"				        —> ["developer"]
+X"DeveLoper"				        —> ["developer"]
 "developers"                    -> ["developer"]
 "coder"                         -> ["developer"]
 "coder programmer developer"    -> ["developer"]
@@ -68,5 +68,11 @@ def test_parse_unique_words_in_right_order():
 
 def test_case_sensitivity():
     data = "DeveLoper"
+    expected = ["developer"]
+    assert parse(data) == expected
+
+
+def test_synonym():
+    data = "developers"
     expected = ["developer"]
     assert parse(data) == expected
