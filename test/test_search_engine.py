@@ -9,8 +9,8 @@ lowerCase
 plural
 synonyms
 
-"developer"				        —> ["developer"]
-Null -> []
+X "developer"				        —> ["developer"]
+None -> []
 "" -> []
 "cool developer"		        —> ["cool", "developer"]
 "cool cool developer"		    —> ["cool", "developer"]
@@ -29,4 +29,10 @@ Null -> []
 def test_parse_single_word():
     data = "developer"
     expected = ["developer"]
+    assert parse(data) == expected
+
+
+def test_null():
+    data = None
+    expected = []
     assert parse(data) == expected
