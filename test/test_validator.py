@@ -8,9 +8,9 @@ At least 1 underscore, dash, comma, or slash
 Password must be at least 6 characters long
 Max 12 characters long
 
-Abc-12 -> True
+X Abc-12 -> True
 
-ABC-12 -> False
+X ABC-12 -> False
 
 abc-12 -> False
 
