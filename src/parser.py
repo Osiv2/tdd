@@ -3,6 +3,8 @@ def parse(query):
         return []
 
     search_engine_query = [parse_word(word) for word in query.split()]
+    search_engine_query = [
+        word for word in search_engine_query if word is not '']
 
     return get_unique_list(search_engine_query)
 
