@@ -38,9 +38,9 @@ Newly posted requirements
 *no empty words ("developers      " ---> developer) <---
 
 
-"developer         berlin          " ---> ["developer","berlin"]
+X "developer         berlin          " ---> ["developer","berlin"]
 
-"developer123#" --> ["developer"]
+X "developer123#" --> ["developer"]
 "developer #¤¤%&123" --> ["developer"]
 
 "developer in berlin" --> ["developer", "berlin"]
@@ -132,5 +132,11 @@ def test_no_empty_words():
 
 def test_only_alphabetic():
     data = "developer123#"
+    expected = ["developer"]
+    assert parse(data) == expected
+
+
+def test_only_alphabetic_no_empty_word():
+    data = "developer #¤¤%&123"
     expected = ["developer"]
     assert parse(data) == expected
