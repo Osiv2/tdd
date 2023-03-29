@@ -12,6 +12,8 @@ def parse(query):
 def parse_word(word):
     word = word.lower()
     word = clean_word(word)
+    if word in ["in", "at", "on"]:
+        word = ""
     if word.endswith('s'):
         word = word[:-1]
     if word in ["coder", "programmer"]:
