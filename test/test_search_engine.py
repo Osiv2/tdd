@@ -24,7 +24,29 @@ X "coder"                         -> ["developer"]
 X "coder programmer developer"    -> ["developer"]
 X "coder programmers developers"  -> ["developer"]
 
-"FinD all coders developer"     —> ["find", "all", "developer"]
+X "FinD all coders developer"     —> ["find", "all", "developer"]
+
+
+Newly posted requirements
+
+*synonyms (programmer -> developer) check
+*case insensitive  (HejSan -> hejsan) check
+*plurals to singlular (developers -> developer) check
+*no duplicates (developer developer --> developer) check
+*only alphabetical query ("developer123 #¤¤%&" --> ["developer"]) <--
+*no in/at/on  (developer in berlin --> developer berlin) <---
+*no empty words ("developers      " ---> developer) <---
+
+
+"developer         berlin          " ---> ["developer","berlin"]
+
+"developer123#" --> ["developer"]
+"developer #¤¤%&123" --> ["developer"]
+
+"developer in berlin" --> ["developer", "berlin"]
+"developer at berlin" --> ["developer", "berlin"]
+"developer on berlin" --> ["developer", "berlin"]
+
 
 
 '''
@@ -99,4 +121,16 @@ def test_multiple_synonyms_with_plural():
 def test_arbitrary_query():
     data = "FinD all coders developer"
     expected = ["find", "all", "developer"]
+    assert parse(data) == expected
+
+
+def test_no_empty_words():
+    data = "developer         berlin          "
+    expected = ["developer", "berlin"]
+    assert parse(data) == expected
+
+
+def test_only_alphabetic():
+    data = "developer123#"
+    expected = ["developer"]
     assert parse(data) == expected
