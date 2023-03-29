@@ -25,7 +25,7 @@ X Abc/12 -> true
 
 X Abc-1 -> False
 
-Abc-12abc-12- -> False
+X Abc-12abc-12- -> False
 
 '''
 
