@@ -9,10 +9,12 @@ Password must be at least 6 characters long
 Max 12 characters long
 
 Abc-12 -> True
-ABC-12 -> False
-abc-12 -> False
-Abc--- -> False
 
+ABC-12 -> False
+
+abc-12 -> False
+
+Abc--- -> False
 Abc-09 -> True
 
 Abc_12 -> true
@@ -20,16 +22,14 @@ Abc,12 -> true
 Abc/12 -> true
 
 Abc-1 -> False
+
 Abc-12abc-12- -> False
-
-
-
 
 '''
 
 
-def test_lowercase_character():
-    assert validate('a') == True
+def test_ok_password():
+    assert validate('Abc-12') == True
 
 
 def test_uppercase_character():
