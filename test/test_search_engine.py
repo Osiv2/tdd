@@ -41,7 +41,7 @@ Newly posted requirements
 X "developer         berlin          " ---> ["developer","berlin"]
 
 X "developer123#" --> ["developer"]
-"developer #¤¤%&123" --> ["developer"]
+X "developer #¤¤%&123" --> ["developer"]
 
 "developer in berlin" --> ["developer", "berlin"]
 "developer at berlin" --> ["developer", "berlin"]
@@ -140,3 +140,28 @@ def test_only_alphabetic_no_empty_word():
     data = "developer #¤¤%&123"
     expected = ["developer"]
     assert parse(data) == expected
+
+
+def test_no_word_like_in():
+    data = "developer in berlin"
+    expected = ["developer", "berlin"]
+    assert parse(data) == expected
+
+
+def test_no_word_like_at():
+    data = "developer at berlin"
+    expected = ["developer", "berlin"]
+    assert parse(data) == expected
+
+
+def test_no_word_like_on():
+    data = "developer on berlin"
+    expected = ["developer", "berlin"]
+    assert parse(data) == expected
+
+
+'''
+"developer in berlin" --> ["developer", "berlin"]
+"developer at berlin" --> ["developer", "berlin"]
+"developer on berlin" --> ["developer", "berlin"]
+'''
