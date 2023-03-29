@@ -8,9 +8,9 @@ lowerCase
 plural
 synonyms
 
+"developer"				        —> ["developer"]
 Null -> []
 "" -> []
-"developer"				        —> ["developer"]
 "cool developer"		        —> ["cool", "developer"]
 "cool cool developer"		    —> ["cool", "developer"]
 "DeveLoper"				        —> ["developer"]
@@ -22,12 +22,10 @@ Null -> []
 "FinD all coders developer"     —> ["find", "all", "developer"]
 
 
-
-
-
-
 '''
 
 
-def test_search_engine():
-    assert True
+def test_parse():
+    data = "developer"
+    expected = ["developer"]
+    assert parse(data) == expected
