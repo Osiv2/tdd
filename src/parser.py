@@ -1,3 +1,6 @@
+from ..src.synonyms import synonyms
+
+
 def parse(query):
     if query is None:
         return []
@@ -37,6 +40,3 @@ def clean_word(word):
         if char.isalpha():
             new_word += char
     return new_word
-
-
-synonyms = [("developer", "coder", "programmer"), ("berliner", "donut")]
