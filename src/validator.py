@@ -4,6 +4,9 @@ def validate(password):
     contains_digit = False
     contains_dash = False
 
+    if len(password) < 6:
+        return False
+
     for c in password:
         if c.islower():
             contains_lower_case = True
